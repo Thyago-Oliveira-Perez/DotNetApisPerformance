@@ -10,10 +10,11 @@ export let options = {
 };
 
 export default function () {
-  let response = http.get("http://localhost:5000/Product");
+  let response = http.get("http://localhost:5000/Product/First1000Products");
 
   check(response, {
     "is status 200": (r) => r.status === 200,
+    "is data returned": (r) => r.body.length > 0,
   });
 
   sleep(1);
