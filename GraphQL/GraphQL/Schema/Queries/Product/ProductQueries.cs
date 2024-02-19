@@ -11,5 +11,10 @@ namespace GraphQL.Schema.Queries.Product
         {
             return service.Get1000();
         }
+
+        public Task<IQueryable<ProductEntity>> GetFirstFull1000([Service] ProductService service)
+        {
+            return service.GetFirstFull1000();
+        }
     }
 }

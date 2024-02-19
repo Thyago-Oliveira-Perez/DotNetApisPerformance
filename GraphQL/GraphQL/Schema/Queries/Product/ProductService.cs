@@ -12,5 +12,11 @@ namespace GraphQL.Schema.Queries.Product
         {
             return Task.FromResult(context.Products.OrderBy(p => p.CreatedAt).Take(1000));
         }
+
+        public Task<IQueryable<ProductEntity>> GetFirstFull1000()
+        {
+            var products = context.Products.Include(p => p.Transactions).OrderBy(p => p.CreatedAt).Take(1000);
+            return Task.FromResult(products);
+        }
     }
 }
