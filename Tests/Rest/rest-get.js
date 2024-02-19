@@ -10,7 +10,7 @@ export let options = {
 };
 
 export default function () {
-  let response = http.get("https://localhost:44317/Product");
+  let response = http.get("http://localhost:5000/Product");
 
   check(response, {
     "is status 200": (r) => r.status === 200,
