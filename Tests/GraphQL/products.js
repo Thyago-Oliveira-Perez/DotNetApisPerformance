@@ -10,7 +10,7 @@ export let options = {
 };
 
 export default function () {
-  const url = "https://localhost:5001/graphql";
+  const url = "http://localhost:5000/graphql";
   const payload = JSON.stringify({
     query: `{
           first1000 {

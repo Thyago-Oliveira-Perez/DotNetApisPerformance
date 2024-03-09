@@ -6,6 +6,19 @@ This project was made to compare the performance between Rest and GraphQL in .NE
 
 - Docker Engine 17.06.0+
 - .NET 8
+- k6
+
+# Install k6
+
+## Ubuntu
+
+```bash
+sudo gpg -k
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+sudo apt-get update
+sudo apt-get install k6
+```
 
 # Docker
 
@@ -16,6 +29,15 @@ $ docker-compose up -d
 ```
 
 # Running projects
+
+## Grafana
+
+Default user credentials to grafana is:
+
+```bash
+user: admin
+password: admin
+```
 
 ## GraphQL
 
@@ -43,3 +65,5 @@ After every Entity change, could be: edit, create, delete, etc, you must create 
 
 - Open the 'Package Manager Console' and run: 'dotnet ef migrations add [Migration-Name]'
 - To remove the last migration use this: 'dotnet ef migrations remove'
+
+# Running the projects
